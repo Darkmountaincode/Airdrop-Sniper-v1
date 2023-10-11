@@ -1,0 +1,537 @@
+<%- include('../partials/_header');  %>
+
+		<!-- partial:../../partials/_sidebar.html -->
+	<%- include('../partials/_sidebar')  %>
+		<!-- partial -->
+	
+		<div class="page-wrapper">
+			<%- include('../partials/_navbar')  %>
+			<!-- partial -->
+
+			<div class="page-content">
+
+				<nav class="page-breadcrumb">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a href="#">Coin</a></li>
+						<li class="breadcrumb-item active" aria-current="page">Coin Bilgileri</li>
+					</ol>
+				</nav>
+
+				<div class="row">
+					<div class="col-md-12 grid-margin">
+						<div class="card">
+							<div class="card-body">
+								<h6 class="card-title">Coin İle İlgili Bilgileri Lütfen Buraya Giriniz</h6>
+								<form id="coinekle" method="POST" class="forms-sample" > 
+																	   
+								<div class="row">
+									<div class="col-md-12 grid-margin">
+										<div class="card">
+											<div class="card-body">
+							<p class="text-muted mb-3">Coin Düzenle</p>
+							<div class="col"> 
+								<img src="/coinimages/<%- site.logo  %>" alt="" height="120px" width="120px">
+								<label class="form-label">Logo:</label>
+								<input type="file" id="logo" class="form-control mb-4 mb-md-0" name="logo" />
+							</div>
+							<br>
+							<div class="row mb-3"> 
+							<div class="col">
+							<label class="form-label">Coin Adı:</label>
+							<input class="form-control mb-4 mb-md-0" id="coinname"  placeholder="Bitcoin"  />
+							</div></div>
+							<div class="row mb-3"> 
+							<div class="col">
+							<label class="form-label">Coin Sembol:</label>
+							<input class="form-control mb-4 mb-md-0" id="symbol" placeholder="BTC"  />
+							</div></div>
+							<div class="row mb-3"> 
+							<div class="col">
+							<label class="form-label">Kontrat Adresi:</label>
+							<input class="form-control mb-4 mb-md-0" id="contract" placeholder="Kontrat Adresi"/>
+							</div></div>
+							<div class="row mb-3"> 
+							<div class="col">
+							<label class="form-label">Özel Dex:</label>
+							<input class="form-control mb-4 mb-md-0" id="ozeldex" placeholder="Özel Dex (opsiyonel) https://apeswap.finance/..." />
+							</div></div>
+							<div class="row mb-3"> 
+							<div class="col">
+							<label class="form-label">Web Site:</label>
+							<input class="form-control mb-4 mb-md-0" id="website" placeholder="Website Adresi" />
+							</div></div>
+							<div class="row mb-3"> 
+							<div class="col">
+							<label class="form-label">Email:</label>
+							<input class="form-control mb-4 mb-md-0" id="email" placeholder="Email Adresiniz"/>
+							</div></div>
+							<div class="row mb-3"> 
+							<div class="col">
+							<label class="form-label">Telegram:</label>
+							<input class="form-control mb-4 mb-md-0" id="telegram" placeholder="Telegram"/>
+							</div></div>
+							<div class="row mb-3"> 
+							<div class="col">
+							<label class="form-label">Coingecko:</label>
+							<input class="form-control mb-4 mb-md-0" id="coingecko" placeholder="coingecko"  />
+							</div></div>
+							<div class="row mb-3"> 
+							<div class="col">
+							<label class="form-label">Telegram Grup:</label>
+							<input class="form-control mb-4 mb-md-0" id="telegramgrup"  placeholder="Telegram Grup" />
+							</div></div>
+							<div class="row mb-3"> 
+								<div class="col">
+								<label class="form-label">Twitter:</label>
+								<input class="form-control mb-4 mb-md-0" id="twitter" placeholder="Twitter Adresiniz"   />
+								</div></div>
+								<div class="row mb-3"> 
+									<div class="col">
+									<label class="form-label">Discord:</label>
+									<input class="form-control mb-4 mb-md-0" id="discord" placeholder="Discord"  />
+									</div></div>
+									<div class="row mb-3"> 
+										<div class="col">
+										<label class="form-label">Coinmarketcap:</label>
+										<input class="form-control mb-4 mb-md-0" id="coinmarketcap" placeholder="Coinmarketcap"/>
+										</div></div>
+										<div class="row mb-3"> 
+											<div class="col">
+											<label class="form-label">Ön Satış Linki:</label>
+											<input class="form-control mb-4 mb-md-0" id="onsatislink" placeholder="Ön Satış Linki"  />
+											</div></div>
+											<div class="row mb-3"> 
+												<div class="col">
+												<label class="form-label">CHAIN</label>
+												<select class="form-control" name="network" id="network">
+													<option value="BSC">Binance Smart Chain (BSC)</option>
+													<option value="ETH">Ethereum (ETH)</option>
+													<option value="ARB">Arbitrum (ARB)</option>
+													<option value="MATIC">Polygon (MATIC)</option>
+													<option value="FTM">Fantom (FTM)</option>
+													<option value="SOL">Solana (SOL)</option>
+													<option value="KCC">Kucoin (KCC)</option>
+													<option value="DOGE">DogeChain (DOGE)</option>
+													<option value="OTHER">Other</option>
+												  </select>
+												</div></div>
+
+											<div class="row mb-3"> 
+												<div class="col">
+												<label class="form-label">Kyc var mı ?</label>
+												<select id="kyc" class="form-control">
+													<option value="true" >Evet</option>
+													<option value="false" >Hayır</option>
+												</select>
+												</div></div>
+												<div class="row mb-3"> 
+													<div class="col">
+													<label class="form-label">Audit var mı ?</label>
+													<select id="audit" class="form-control">
+														<option value="true" >Evet</option>
+														<option value="false"  > Hayır</option>
+													</select>
+													</div></div>
+													<div class="row mb-3"> 
+														<div class="col">
+														<label class="form-label">Aktif mi ?</label>
+														<select id="aktif" class="form-control">
+															<option value="true" >Evet</option>
+															<option value="false" >Hayır</option>
+														</select>
+														</div>
+														<div class="row mb-3"> 
+															<div class="col">
+															<label class="form-label">Promoted  ?</label>
+															<select id="promoted" class="form-control">
+																<option value="true" >Evet</option>
+																<option value="false" >Hayır</option>
+															</select>
+															</div>
+													</div>
+														<div class="row mb-3">
+															<div class="col">
+															  <input class="form-check-input" type="checkbox" id="presale" onchange="toggleForm()">
+															  <label class="form-check-label" for="presale">Ön Satış Var</label>
+															</div>
+														  </div>
+														  
+														  <div id="formWrapper" style="display: none;">
+															<div class="cs-height_20 cs-height_lg_20"></div>
+															<label class="cs-form_label">Presale Date</label>
+															<div class="cs-form_field_wrap">
+															  <input type="date" class="cs-form_field" id="presaledate" lang="en">
+															</div>
+															<div class="cs-height_20 cs-height_lg_20"></div>
+															<label class="cs-form_label">Presale End Date</label>
+															<div class="cs-form_field_wrap">
+															  <input type="date" class="cs-form_field" id="presaleenddate" lang="en">
+															</div>
+														  </div>
+														  
+														  <script>
+															function toggleForm() {
+															  var formWrapper = document.getElementById("formWrapper");
+															  var presaleCheckbox = document.getElementById("presale");
+														  
+															  if (presaleCheckbox.checked) {
+																formWrapper.style.display = "block";
+															  } else {
+																formWrapper.style.display = "none";
+															  }
+															}
+														  </script>
+														  <style>	#heading {
+															text-align:center;
+															font-size: 26px;    
+															font-family: arial, sans-serif;
+															font-weight: 300;
+															color: #00c1ff;
+														}
+														#source-code {
+													
+															width: 100%;
+													
+															height: 31vh;
+													
+															background-color: #0c1427;
+													
+															display: flex;
+													
+															justify-content: space-between;
+													
+															overflow-y: scroll;
+													
+															border-radius: 10px;
+													
+														}
+													
+															#source-code * {
+													
+															box-sizing: border-box;
+													
+														}
+													
+														
+													
+														#codeblock {
+													
+															white-space: pre-wrap;
+													
+															width: calc(100% - 30px);
+													
+															float: right;
+													
+															height: auto;
+													
+															font-family: arial;
+													
+															color: #fff;
+													
+															background: transparent;
+													
+															padding: 15px;
+													
+															line-height: 30px;
+													
+															overflow: hidden;
+													
+															min-height: 100%;
+													
+															border: none;
+													
+														}
+													
+														
+													
+														#line-numbers {
+														
+															min-width: 30px;
+													
+															height: 100%;
+													
+															padding: 15px 5px;
+													
+															font-size: 14px;
+													
+															vertical-align: middle;
+													
+															text-align: right;
+													
+															margin: 0;
+													
+															color: #fff;
+													
+															background: black;
+													
+														}
+													
+														
+													
+														#line-numbers p {
+													
+															display: block;
+													
+															height: 30px;
+													
+															line-height: 30px;
+													
+															margin: 0;
+													
+														}
+													
+														
+													
+														#codeblock:focus{
+													
+															outline: none;
+													
+														}</style>
+															<div class="row mb-3"> 
+																<div class="col">
+																	<input class="form-check-input" type="checkbox" id="nopresale">
+																	<label class="form-check-label" for="price">Ön Satış Yok</label>
+																</div></div>
+																<div class="row mb-3"> 
+																	<div class="col">
+																	<label class="form-label">Başlama Tarihi:</label>
+																	<input class="form-control mb-4 mb-md-0" type="date" id="baslamatarihi" />
+																	</div></div>
+													<div class="row mb-3">
+														<div class="col">
+															<div class="row">
+																<div class="col-md-12 grid-margin stretch-card">
+																	<div class="card">
+																		<div class="card-body">
+																			<h4 class="card-title">Coin Açıklaması</h4>
+																			<div id="source-code">
+																				<div id="line-numbers"><p>1</p></div>
+																				<textarea id="codeblock"></textarea>
+																			</div>
+																			<script>'use scrict';
+
+																				var linenumbers = document.getElementById('line-numbers');
+																				
+																				var editor = document.getElementById('codeblock');
+																				
+																					function getWidth(elem) {
+																				
+																					return elem.scrollWidth - (parseFloat(window.getComputedStyle(elem, null).getPropertyValue('padding-left')) + parseFloat(window.getComputedStyle(elem, null).getPropertyValue('padding-right')))
+																				
+																				}
+																				
+																				function getFontSize(elem) {
+																				
+																					return parseFloat(window.getComputedStyle(elem, null).getPropertyValue('font-size'));
+																				
+																				}
+																				
+																				function cutLines(lines) {
+																				
+																					return lines.split(/\r?\n/);
+																				
+																				}
+																				
+																					
+																				
+																					
+																				
+																				function getLineHeight(elem) {
+																				
+																					var computedStyle = window.getComputedStyle(elem);
+																				
+																					var lineHeight = computedStyle.getPropertyValue('line-height');
+																				
+																					var lineheight;
+																				
+																					
+																				
+																					if (lineHeight === 'normal') {
+																				
+																						var fontSize = computedStyle.getPropertyValue('font-size');
+																				
+																						lineheight = parseFloat(fontSize) * 1.2;
+																				
+																					} else {
+																				
+																						lineheight = parseFloat(lineHeight);
+																				
+																					}
+																				
+																					
+																				
+																					return lineheight;
+																				
+																				}
+																				
+																				function getTotalLineSize(size, line, options) {
+																				
+																					if (typeof options === 'object') options = {};
+																				
+																					var p = document.createElement('span');
+																				
+																					p.style.setProperty('white-space', 'pre');
+																				
+																					p.style.display = 'inline-block';
+																				
+																					if (typeof options.fontSize !== 'undefined') p.style.fontSize = options.fontSize;
+																				
+																					p.innerHTML = line;
+																				
+																					document.body.appendChild(p);
+																				
+																					var result = (p.scrollWidth / size);
+																				
+																					p.remove();
+																				
+																					return Math.ceil(result);
+																				
+																				}
+																				
+																				function getLineNumber() {
+																				
+																					var textLines = editor.value.substr(0, editor.selectionStart).split("\n");
+																				
+																					var currentLineNumber = textLines.length;
+																				
+																					var currentColumnIndex = textLines[textLines.length-1].length;
+																				
+																					return currentLineNumber;
+																				
+																				}
+																				
+																					
+																				
+																				function init() {
+																				
+																					var totallines = cutLines(editor.value), linesize;
+																				
+																					linenumbers.innerHTML = '';
+																				
+																					for (var i = 1; i <= totallines.length; i++) {
+																				
+																						var num = document.createElement('p');
+																				
+																						num.innerHTML = i;
+																				
+																						linenumbers.appendChild(num);
+																				
+																							
+																				
+																						linesize = getTotalLineSize(getWidth(editor), totallines[(i - 1)], {'fontSize' : getFontSize(editor)});
+																				
+																						if (linesize > 1) {
+																				
+																							num.style.height = (linesize * getLineHeight(editor)) + 'px';
+																				
+																						}
+																				
+																					}
+																				
+																						
+																				
+																					linesize = getTotalLineSize(getWidth(editor), totallines[(getLineNumber() - 1)], {'fontSize' : getFontSize(editor)});
+																				
+																					if (linesize > 1) {
+																				
+																						linenumbers.childNodes[(getLineNumber() - 1)].style.height = (linesize * getLineHeight(editor)) + 'px';
+																				
+																					}
+																				
+																						
+																				
+																					editor.style.height = editor.scrollHeight;
+																				
+																					linenumbers.style.height = editor.scrollHeight;
+																				
+																				}
+																				
+																				editor.addEventListener('keyup', init);
+																				
+																				editor.addEventListener('input', init);
+																				
+																				editor.addEventListener('click', init);
+																				
+																				editor.addEventListener('paste', init);
+																				
+																				editor.addEventListener('load', init);
+																				
+																				editor.addEventListener('mouseover', init);</script>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div></div>
+								
+							  <div class="row mb-3">
+								<div class="col">
+
+								</div>
+							 
+							  </div>
+							
+							  <input type="hidden" name="coinId" id="coinId" value="<%-    %>">
+							</div>
+							
+								<button type="submit" class="btn btn-primary">Güncelle</button>
+						</form>
+					</div>
+				</div>
+				
+			</th>
+									
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+					</div>
+				</div>
+
+			</div>
+
+				
+			
+				</body>
+                          <div class="row">
+                      
+				<div class="row">
+			<%- include('../partials/_footer');  %>
+		</div>
+	</div>
+ 
+
+	<!-- Plugin js for this page -->
+	<script src="/admin/vendors/jquery-validation/jquery.validate.min.js"></script>
+	<script src="/admin/vendors/bootstrap-maxlength/bootstrap-maxlength.min.js"></script>
+	<script src="/admin/vendors/inputmask/jquery.inputmask.min.js"></script>
+	<script src="/admin/vendors/select2/select2.min.js"></script>
+	<script src="/admin/vendors/typeahead.js/typeahead.bundle.min.js"></script>
+	<script src="/admin/vendors/jquery-tags-input/jquery.tagsinput.min.js"></script>
+	<script src="/admin/vendors/dropzone/dropzone.min.js"></script>
+	<script src="/admin/vendors/dropify/dist/dropify.min.js"></script>
+	<script src="/admin/vendors/pickr/pickr.min.js"></script>
+	<script src="/admin/vendors/moment/moment.min.js"></script>
+	<script src="/admin/vendors/flatpickr/flatpickr.min.js"></script>
+	<!-- End plugin js for this page -->
+
+	<!-- inject:js -->
+	<script src="/admin/vendors/feather-icons/feather.min.js"></script>
+	<script src="/admin/js/template.js"></script>
+	<!-- endinject -->
+
+	<!-- Custom js for this page -->
+	<script src="/admin/js/form-validation.js"></script>
+	<script src="/admin/js/bootstrap-maxlength.js"></script>
+	<script src="/admin/js/inputmask.js"></script>
+	<script src="/admin/js/select2.js"></script>
+	<script src="/admin/js/typeahead.js"></script>
+	<script src="/admin/js/tags-input.js"></script>
+	<script src="/admin/js/dropzone.js"></script>
+	<script src="/admin/js/dropify.js"></script>
+	<script src="/admin/js/pickr.js"></script>
+	<script src="/admin/js/flatpickr.js"></script>
+	<!-- End custom js for this page -->
+
+</body>
+</html>
