@@ -1,0 +1,272 @@
+<%- include('../partials/_header');  %>
+
+		<!-- partial:../../partials/_sidebar.html -->
+	<%- include('../partials/_sidebar')  %>
+		<!-- partial -->
+	
+		<div class="page-wrapper">
+			<%- include('../partials/_navbar')  %>
+			<!-- partial -->
+			<link rel="stylesheet" href="/admin/vendors/datatables.net-bs5/dataTables.bootstrap5.css">
+
+			<div class="page-content">
+
+				<nav class="page-breadcrumb">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a href="#">Sayfalar</a></li>
+						<li class="breadcrumb-item active" aria-current="page">Sayfa Bilgileri</li>
+					</ol>
+				</nav>
+				<div class="row">
+				 
+				<div class="row">
+					<div class="col-md-12 grid-margin stretch-card">
+            <div class="card">
+              <div class="card-body">
+                <h6 class="card-title">Sayfa Listesi</h6>
+                <div class="table-responsive">
+                  <table id="dataTableExample" class="table">
+                    <thead>
+                      <tr>
+                        <th>Sayfa Adı</th>
+                        <th>Sayfa Url</th>
+                        <th>Düzenle</th>
+                       </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><%= iletisim.iletisimbaslik %></td>
+                        <td>/iletisim</td>
+ 						<th>
+							<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalCenter1">
+								Düzenle
+							  </button>
+							  <div class="modal fade" id="exampleModalCenter1" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+								<div class="modal-dialog modal-dialog-centered">
+								  <div class="modal-content">
+									<div class="modal-header">
+									  <h5 class="modal-title" id="exampleModalCenterTitle">İletişim Düzenle</h5>
+									  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="btn-close"></button>
+									</div>
+									<div class="modal-body">
+																   
+			<div class="row">
+				<div class="col-md-12 grid-margin">
+					<div class="card">
+						<div class="card-body">
+							<p class="text-muted mb-3">İletişim Düzenle</p>
+
+							<form action="iletisimkaydet" method="POST" class="forms-sample">
+								<div class="row mb-3">
+								<div class="col">
+								  <label class="form-label">İletişim Başlık:</label>
+								  <input class="form-control mb-4 mb-md-0" name="iletisimbaslik" id="iletisimbaslik" value="<%= iletisim.iletisimbaslik %>" />
+								</div>
+								
+							  </div>
+							  <div class="row mb-3">
+								<div class="col">
+								  <label class="form-label">İletisim Detay Adres:</label>
+								  <input class="form-control" name="iletisimdetayadres" id="iletisimdetayadres" value="<%= iletisim.iletisimdetayadres %>" placeholder="Minimum Ödeme Tutarı.." />
+								</div>
+								<div class="row mb-3">
+									<div class="col">
+									  <label class="form-label">İletişim Tel:</label>
+									  <input class="form-control mb-4 mb-md-0" name="iletisimtel" id="iletisimtel" value="<%= iletisim.iletisimtel %>" />
+									</div>
+									
+								  </div>
+								  <div class="row mb-3">
+									<div class="col">
+									  <label class="form-label">İletisim Email:</label>
+									  <input class="form-control" name="email" id="email" value="<%=  iletisim.email %>" />
+									</div>
+								<input type="hidden" name="iletisimId" id="iletisimId" value="<%- iletisim.id   %>">
+							  </div>
+							  <button type="submit" class="btn btn-primary">Güncelle</button>
+							</form>
+					</div>
+				</div>
+			</th>
+						
+                        </td>
+                        
+                        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                       </th>
+									</tr>
+                      </tr>
+					  <tbody>
+						<tr>
+						  <td><%= hakkimizda.baslik  %></td> 
+						  <td>/hakkimizda</td>
+						   <th>
+							  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalCenter2">
+								  Düzenle
+								</button>
+								<div class="modal fade" id="exampleModalCenter2" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+								  <div class="modal-dialog modal-dialog-centered">
+									<div class="modal-content">
+									  <div class="modal-header">
+										<h5 class="modal-title" id="exampleModalCenterTitle">Hakımızda Düzenle</h5>
+										<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="btn-close"></button>
+									  </div>
+									  <div class="modal-body">
+																	 
+			  <div class="row">
+				  <div class="col-md-12 grid-margin">
+					  <div class="card">
+						  <div class="card-body">
+							  <p class="text-muted mb-3">Hakkımızda Düzenle</p>
+  
+							  <form action="hakkimizdakayit" method="POST" class="forms-sample">
+								  <div class="row mb-3">
+								  <div class="col">
+									<label class="form-label">Başlık:</label>
+									<input class="form-control mb-4 mb-md-0" name="baslik" id="baslik" value="<%= hakkimizda.baslik  %>" />
+								  </div>
+								  
+								</div>
+								<div class="row mb-3">
+								  <div class="col">
+									<label class="form-label">Alt Başlık:</label>
+									<input class="form-control" name="altbaslik" id="altbaslik" value="<%= hakkimizda.altbaslik  %>" placeholder="Minimum Ödeme Tutarı.." />
+								  </div>
+								  <input type="hidden" name="kategoriId" id="kategoriId" value="<%-   %>">
+								</div>
+								<div class="row mb-3">
+									<div class="col">
+									  <label class="form-label">İçerik:</label>
+									  <input class="form-control" name="icerik" id="icerik" value="<%= hakkimizda.icerik  %>" placeholder="Minimum Ödeme Tutarı.." />
+									  <input type="hidden" name="hakkimizdaId" id="hakkimizdaId" value="<%- hakkimizda.id   %>">
+
+									</div>
+								  </div>
+								<button type="submit" class="btn btn-primary">Güncelle</button>
+							  </form>
+					  </div>
+				  </div>
+			  </th>
+						  
+						  </td>
+						  
+						  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+						 </th>
+									  </tr>
+						</tr>
+						<tbody>
+							<tr>
+							  <td><%= gizlilik.gizlilikbaslik  %></td>
+							  <td>/gizlilik</td>
+							   <th>
+								  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalCenter3">
+									  Düzenle
+									</button>
+									<div class="modal fade" id="exampleModalCenter3" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+									  <div class="modal-dialog modal-dialog-centered">
+										<div class="modal-content">
+										  <div class="modal-header">
+											<h5 class="modal-title" id="exampleModalCenterTitle">Gizlilik Düzenle</h5>
+											<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="btn-close"></button>
+										  </div>
+										  <div class="modal-body">
+																		 
+				  <div class="row">
+					  <div class="col-md-12 grid-margin">
+						  <div class="card">
+							  <div class="card-body">
+								  <p class="text-muted mb-3">Gizlilik Düzenle</p>
+	  
+								  <form action="gizlilikguncelle" method="POST" class="forms-sample">
+									  <div class="row mb-3">
+									  <div class="col">
+										<label class="form-label">Gizlilik Başlık:</label>
+										<input class="form-control mb-4 mb-md-0" name="gizlilikbaslik" id="gizlilikbaslik" value="<%= gizlilik.gizlilikbaslik %>" />
+									  </div>
+									  
+									</div>
+									<div class="row mb-3">
+									  <div class="col">
+										<label class="form-label">Gizlilik Alt Başlık:</label>
+										<input class="form-control" name="gizlilikaltbaslik" id="gizlilikaltbaslik" value="<%= gizlilik.gizlilikaltbaslik %>" />
+									  </div>
+									  <input type="hidden" name="gizlilikId" id="gizlilikId" value="<%- gizlilik.id  %>">
+									</div>
+									<div class="row mb-3">
+										<div class="col">
+										  <label class="form-label">Gizlilik Açıklama:</label>
+										  <input class="form-control" name="icerik" id="icerik" value="<%= gizlilik.icerik %>" />
+										</div>
+									  </div>
+									<button type="submit" class="btn btn-primary">Güncelle</button>
+								  </form>
+						  </div>
+					  </div>
+				  </th>
+							  
+							  </td>
+							  
+							  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+							 </th>
+										  </tr>
+							</tr>
+							
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+			
+			
+					</div>
+				</div>
+
+			</div>
+
+			
+				<div class="row">
+			<%- include('../partials/_footer');  %>
+		</div>
+	</div>
+ 
+
+	<!-- Plugin js for this page -->
+	<script src="/admin/vendors/jquery-validation/jquery.validate.min.js"></script>
+	<script src="/admin/vendors/bootstrap-maxlength/bootstrap-maxlength.min.js"></script>
+	<script src="/admin/vendors/inputmask/jquery.inputmask.min.js"></script>
+	<script src="/admin/vendors/select2/select2.min.js"></script>
+	<script src="/admin/vendors/typeahead.js/typeahead.bundle.min.js"></script>
+	<script src="/admin/vendors/jquery-tags-input/jquery.tagsinput.min.js"></script>
+	<script src="/admin/vendors/dropzone/dropzone.min.js"></script>
+	<script src="/admin/vendors/dropify/dist/dropify.min.js"></script>
+	<script src="/admin/vendors/pickr/pickr.min.js"></script>
+	<script src="/admin/vendors/moment/moment.min.js"></script>
+	<script src="/admin/vendors/flatpickr/flatpickr.min.js"></script>
+	<!-- End plugin js for this page -->
+	<script src="/admin/js/data-table.js"></script>
+
+	<!-- Plugin js for this page -->
+	<script src="/admin/vendors/datatables.net/jquery.dataTables.js"></script>
+	<script src="/admin/vendors/datatables.net-bs5/dataTables.bootstrap5.js"></script>
+	  <!-- End plugin js for this page -->
+  
+	  
+	  <!-- endinject -->
+	<!-- inject:js -->
+	<!-- endinject -->
+
+	<!-- Custom js for this page -->
+	<script src="/admin/js/form-validation.js"></script>
+	<script src="/admin/js/bootstrap-maxlength.js"></script>
+	<script src="/admin/js/inputmask.js"></script>
+	<script src="/admin/js/select2.js"></script>
+	<script src="/admin/js/typeahead.js"></script>
+	<script src="/admin/js/tags-input.js"></script>
+	<script src="/admin/js/dropzone.js"></script>
+	<script src="/admin/js/dropify.js"></script>
+	<script src="/admin/js/pickr.js"></script>
+	<script src="/admin/js/flatpickr.js"></script>
+	<!-- End custom js for this page -->
+
+</body>
+</html>
