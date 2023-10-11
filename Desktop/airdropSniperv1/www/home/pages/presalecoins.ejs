@@ -1,0 +1,965 @@
+<%- include('../partials/_headers');  %>
+
+  <div class="cs-height_90 cs-height_lg_80"></div>
+  <br><br><br>
+  <!-- Start Hero -->
+  
+  <!-- End Hero --><br>
+  <center><img src="https://storage.googleapis.com/coinsniper-assets/images/MyQjR1yi9Abq7twzJGNmZ0JltDvC9ecutlSr3uk9.gif" alt="" style="max-width: 100%;" height="1200px">    
+  <img src="https://storage.googleapis.com/coinsniper-assets/images/MyQjR1yi9Abq7twzJGNmZ0JltDvC9ecutlSr3uk9.gif" alt="" style="max-width: 100%;" height="1200px"></center>
+  <br><br><br><center><img src="https://storage.googleapis.com/coinsniper-assets/images/Tukp9AtwT9SAcpONAN44CFPbAfuNvuJRI7bgcDxI.png" alt="" width="1350px"></center>
+
+  <div class="cs-height_95 cs-height_lg_70"></div>
+
+  <!-- Start Icon Boxes -->
+  <section>
+    <div class="container">
+      <div class="cs-height_45 cs-height_lg_45"></div>
+      <div class="row kutu">
+       <div class="col-lg-3 col-sm-6">
+      <div class="cs-iconbox cs-style1 cs-white_bg">
+    <table class="table is-fullwidth">
+      <thead>
+        <thead>
+          Top Voted Today 
+          <tr>
+               <th style="color:white">Project</th>
+               <th style="color:white">Votes 24h</th>
+          </tr>
+          </thead>
+          <tbody>
+          
+            <% coins.slice(0,5).forEach(function(coin) { %>
+              <tr> 
+                <td><img src="/coinimages/<%= coin.logo %>" height="20" width="20" alt="">&nbsp;&nbsp;<a href="/coins/<%- coin.coinUrl   %>"><%= coin.name %></a></td>
+                <td><center><%= coin.vote %></center></td>
+                <% let voteFound = false; %>
+                <% voteCounts.forEach(function(vote) { %>
+                  <% if (vote.coinName === coin.name) { %>
+                    <td><center><%= vote.totalVote %></center></td>
+                    <% voteFound = true; %>
+                  <% } %>
+                <% }); %>
+                <% if (!voteFound) { %>
+                  <td><center>0</center></td>
+                <% } %>
+              </tr>
+            <% }); %>
+            
+      </thead>
+    </table>
+   
+  </div>
+  <div class="cs-height_30 cs-height_lg_30"></div>
+</div>
+        <div class="col-lg-3 col-sm-6">
+          <div class="cs-iconbox cs-style1 cs-white_bg">
+            <table class="table is-fullwidth">
+              <thead>
+                <thead>
+                  New Coins
+                  <tr>
+                      <th style="color:white">Project</th>
+                      <th style="color:white">Votes 24h</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                    <% coins.slice(0,5).forEach(function(coin) { %>
+                      <tr> 
+                        <td><img src="/coinimages/<%= coin.logo %>" height="20" width="20" alt="">&nbsp;&nbsp;<a href="/coins/<%- coin.coinUrl   %>"><%= coin.name %></a></td>
+                        <td><center><%= coin.vote %></center></td>
+                        <% let voteFound = false; %>
+                        <% voteCounts.forEach(function(vote) { %>
+                          <% if (vote.coinName === coin.name) { %>
+                            <td><center><%= vote.totalVote %></center></td>
+                            <% voteFound = true; %>
+                          <% } %>
+                        <% }); %>
+                        <% if (!voteFound) { %>
+                          <td><center>0</center></td>
+                        <% } %>
+                      </tr>
+                    <% }); %>
+                    
+              </thead>
+            </table>
+           
+          </div>
+          <div class="cs-height_30 cs-height_lg_30"></div>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+          <div class="cs-iconbox cs-style1 cs-white_bg">
+            <table class="table is-fullwidth">
+              <thead>
+                <thead>
+                  Active Presale
+                  <tr>
+                      <th style="color:white">Project</th>
+                      <th style="color:white">Votes 24h</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                    <% coins.slice(0,5).forEach(function(coin) { %>
+                      <tr> 
+                        <td><img src="/coinimages/<%= coin.logo %>" height="20" width="20" alt="">&nbsp;&nbsp;<a href="/coins/<%- coin.coinUrl   %>"> <%= coin.name %></a></td>
+                        <td><center><%= coin.vote %></center></td>
+                        <% let voteFound = false; %>
+                        <% voteCounts.forEach(function(vote) { %>
+                          <% if (vote.coinName === coin.name) { %>
+                            <td><center><%= vote.totalVote %></center></td>
+                            <% voteFound = true; %>
+                          <% } %>
+                        <% }); %>
+                        <% if (!voteFound) { %>
+                          <td><center>0</center></td>
+                        <% } %>
+                      </tr>
+                    <% }); %>
+              </thead>
+            </table>
+           
+          </div>
+          <div class="cs-height_30 cs-height_lg_30"></div>
+        </div>
+    
+      </div>
+    </div>
+  </section>
+  <!-- End Icon Boxes -->
+
+  <div class="cs-height_65 cs-height_lg_40"></div>
+  <div class="is-hidden-mobile">
+    <div class="container">
+      <div class="airdrop-home active-airdrop">
+        <img src="https://storage.googleapis.com/coinsniper-assets/images/DvYGIaaTMOgdpTNMo7tLASRkwv63hZVWdxFn0fhP.png" alt="">
+        <div class="top">
+          <div class="has-titles">
+            <h2>Weekly Airdrop #1: <span>0.6 BNB</span></h2>
+            <h3>This week 0.6 BNB will be airdropped to a lucky winner.</h3>
+          </div>
+          <div class="has-buttons is-hidden-mobile">
+            <a href="/airdrops" class="button is-primary is-gray">All Airdrops</a>
+            <a href="#" class="button join-button is-primary" data-airdropid="13" data-airdroptitle="Weekly Airdrop #14" data-airdropnetwork="bsc">
+              Join Airdrop
+            </a>
+          </div>
+        </div>
+        <div class="bottom">
+          <div class="has-bar">
+            <div class="bar"></div>
+            <div class="bar-progress" style="width: 0%;">
+              <img src="https://coinsniper.net/assets/img/airdrop-rocket.svg" alt="" id="rocket">
+            </div>
+          </div>
+          <div class="days">
+            <div class="day">
+              <span>Start: June 25st</span>
+            </div>
+            <div class="day">
+              <span>Day 2</span>
+            </div>
+            <div class="day">
+              <span>Day 3</span>
+            </div>
+            <div class="day">
+              <span>Day 4</span>
+            </div>
+            <div class="day">
+              <span>Day 5</span>
+            </div>
+            <div class="day">
+              <span>Day 6</span>
+            </div>
+            <div class="day is-active">
+              <span>Day 7</span>
+            </div>
+            <div class="day">
+              <span>End: July 2th</span>
+            </div>
+          </div>
+          <div class="days-mobile is-hidden-tablet">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Fonksiyon, roketin gün sayısına göre hareketini sağlayacak.
+    function moveRocket(day) {
+      const rocket = document.getElementById("rocket");
+      const width = 100 / 7; // Toplam 7 gün var, her gün için 100 / 7 oranında ilerleyecek.
+  
+      // Roketi hareket ettirme
+      rocket.parentElement.style.width = (width * day) + "%";
+    }
+  
+    // Tarih nesnesini oluşturma ve bugünkü tarihi alıma
+    const today = new Date("2023-07-04");
+    const startDate = new Date("2023-06-26");
+  
+    // Bugün ve başlangıç tarihleri arasındaki farkı alıp gün sayısını bulma
+    const timeDiff = Math.abs(today.getTime() - startDate.getTime());
+    const dayDiff = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+  
+    // Pazartesi gününe kadar olan gün sayısını bulma
+    const weekDiff = dayDiff % 7;
+  
+    // Roketi hareket ettirme fonksiyonunu çağırma
+    moveRocket(weekDiff);
+  </script>  
+<div class="listings promoted">
+  <div class="container containerless">
+      <div class="container">
+          <div class="promoted-header">
+              <div>
+          <h2>Promoted</h2>
+          </div>
+          <div>
+          <a class="promoted-text" href="/contact">
+          Your coin here? Contact us!
+          </a>
+          </div>
+          </div>
+      </div>
+      <div class="scrollable">
+          <div class="can-scroll has-text-right is-hidden-tablet">
+        <img src="/assets/img/table-move.svg" alt="">
+        </div>
+        <table class="table is-fullwidth" attr-table="promoted">
+        <thead>
+        <tr class="table-promoted">
+     <th class="display-mobile sticky-col">
+     <div>
+      <div class="flex padding-left">
+          <div class="index">#</div>
+          <div class="name">Coin</div>
+      </div>
+      <div class="sticky-border"></div>
+  </div>
+</th>
+  <th class="display-mobile">
+              Boosts
+      </th>
+<th class="display-desktop has-text-centered">#</th>
+<th class="display-desktop">Coin</th>
+<th class="display-desktop"></th>
+<th class="display-desktop">Name</th>
+<th>Badges</th>
+<th>Chain</th>
+<th>
+  <div class="sortable" attr-name="market_cap">
+      Market Cap
+
+  </div>
+</th>
+<th>
+  <div class="sortable" attr-name="price_usd">
+      Price
+
+  </div>
+</th>
+<th>
+  <div class="sortable" attr-name="price_change_24h">
+      Change 24h
+
+  </div>
+</th>
+<th>
+  <div class="sortable" attr-name="launch_date">
+      Launch
+
+  </div>
+</th>
+      <th class="display-desktop">
+      Boosts
+  </th>
+          <th></th>
+<th class="display-desktop"></th>
+</tr>
+
+              </thead>
+              <tbody>
+                  <tr data-listingid="47851">
+                    <% let counter = 0; %>
+
+<% coins.forEach(promoted => { %>
+  
+<td class="has-wishlist ignore display-desktop has-text-centered">
+  <span>
+    <%= ++counter %> 
+  </span>
+</td>
+<td class="ignore display-desktop">
+  <div class="flex">
+      <img src="/coinimages/<%= promoted.logo  %>" alt="" height="24">
+  </div>
+</td>
+<td class="">
+      </td>
+<td class="display-desktop">
+  <div class="listing-symbol">
+      <%= promoted.symbol  %>
+  </div>
+  <div class="listing-name"><%= promoted.name  %></div>
+</td>
+<td>
+
+    <div class="kyc-verified">
+      <% if(promoted.kyc) {%>
+      <div class="tag kycs">
+                              <i class="fas fa-shield-alt"></i> KYC
+                      </div> <% }else {%>
+                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp -
+                        <% } %>
+              </div>
+                      <br>
+                      <% if(promoted.audit) {%>
+                      <span class="tag audit">
+                              <i class="fas fa-shield-alt"></i> Audit
+                      </span>
+                      <% }else {%>
+                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp -  
+
+                        <% } %>
+      </td>
+<td>
+  <span class="network">
+
+  <img src="https://coinsniper.net/assets/img/<%- promoted.network.toLowerCase(); %>.png">
+  <%= promoted.network  %>
+  </span>
+</td>
+
+   <td><span class="presale">
+   <img src="https://coinsniper.net/assets/img/presale.png">
+   <%= promoted.presale.toLowerCase()  %>
+   </span>
+  </td>
+  <td>
+    <div class="column-title">Softcap</div>
+    <% if(promoted.softcap)  {%>
+<div>3.40M ETH</div>
+<% }else {%>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-</div>
+
+  <% } %>
+</td>
+<td>             <div class="column-title">
+Hardcap
+</div>
+<div>
+  <% if(promoted.hardcap) {%>
+6.70M ETH
+<% }else {%>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-</div> 
+
+  <% } %>
+</div>
+</td>
+<td>In 5 months</td>
+      <td class="display-desktop">
+      <div class="has-boosts">
+          <img src="https://coinsniper.net/assets/img/boost.png" alt=""> <span class="tag boosts">x788</span>
+      </div>
+  </td>
+          <td class="display-desktop ignore">
+          <button class="button is-secondary promoted-boost-btn" data-name="Hollywood X PEPE" data-imageurl="https://storage.googleapis.com/coinsniper-assets/images/aawh0xuRD9LQeqJJA2ZlMhD8QAuZEkJps52bz6Sw.png" data-id="47851">
+      Boost
+  </button>
+          <a href="/coins/<%= promoted.coinUrl  %>" class="button is-primary">
+      Vote
+  </a>
+</td>
+<td class="ignore has-wishlist">
+          <div class="wishlist-add">
+      <img class="star" src="https://coinsniper.net/assets/img/star.png">
+  </div>
+      </td>
+</tr>
+<tr data-listingid="49071">
+<td class="sticky-col display-mobile">
+  <div>
+      <div class="flex">
+          <div class="index">
+              2                </div>
+          <div class="img">
+              <img src="https://storage.googleapis.com/coinsniper-assets/images/0Cs5EGKJ0LFklxSnl2dCdxgi1UdLqhwjZOcmuykt.jpg">
+          </div>
+          <div class="info">
+              <div class="listing-symbol">
+                  WSM
+              </div>
+              <div class="listing-name">Wall Street Memes</div>
+          </div>
+      </div>
+      <div class="sticky-border"></div>
+  </div>
+</td>
+
+  <td class="display-mobile ignore">
+  <div class="votes-col">
+                      <div class="has-boosts">
+              <span class="tag boosts">x787</span>
+          </div>
+          <div class="has-buttons">
+              <button class="button is-secondary promoted-boost-btn" data-name="Wall Street Memes" data-imageurl="https://storage.googleapis.com/coinsniper-assets/images/0Cs5EGKJ0LFklxSnl2dCdxgi1UdLqhwjZOcmuykt.jpg" data-id="49071">
+                  Boost
+              </button>
+              <a href="/coins/<%= promoted.coinUrl  %>" class="button is-primary">
+                  Vote
+              </a>
+          </div>
+              </div>
+</td>
+<% }); %>
+</tr>
+              </tbody>
+          </table>
+      </div>
+  </div>
+</div>
+<!-- başlangıç -->
+<div class="top">
+  <center><h2>Coins</h2></center>
+  <div>
+    <section class="coins-filters">
+      <div class="container">
+        <div class="top">
+          <h2>Coins</h2>
+          <div class="icons">
+            <div class="btn filters"></div>
+          </div>
+        </div>
+        <div class="filters">
+          <div class="filter-dropdown">
+            <div class="dropdown-name">
+              Chain
+            </div>
+            <div class="dropdown">
+              <div class="current">
+                <div class="dropdown-title">
+                  <span>ALL</span>
+                </div>
+              </div>
+              <ul class="options">
+                <li class="is-active">
+                  <a href="#" data-filter="ALL">ALL</a>
+                </li>
+                <li class="">
+                  <a href="#" data-filter="BSC">
+                    <img src="https://coinsniper.net/assets/img/bsc.png" alt="BSC">
+                    BSC
+                  </a>
+                </li>
+                <li class="">
+                  <a href="#" data-filter="ETH">
+                <img src="https://coinsniper.net/assets/img/eth.png">
+                ETH
+                </a>
+                </li>
+                <li class="">
+                  <a href="#" data-filter="ARB">
+                <img src="https://coinsniper.net/assets/img/arb.png">
+                ARB
+                </a>
+                </li>
+                <li class="">
+                  <a href="#" data-filter="MATIC">
+                <img src="https://coinsniper.net/assets/img/matic.png">
+                MATIC
+                </a>
+                </li>
+                <li class="">
+                  <a href="#" data-filter="TRX">
+                    <img src="https://coinsniper.net/assets/img/trx.png">
+                TRX
+                </a>
+                </li>
+                <li class="">
+                  <a href="#" data-filter="FTM">
+                    <img src="https://coinsniper.net/assets/img/ftm.png">
+                FTM
+                </a>
+                </li>
+                <li class="">
+                  <a href="#" data-filter="KCC">
+                    <img src="https://coinsniper.net/assets/img/kcc.png">
+                KCC
+                </a>
+                </li>
+                <li class="">
+                  <a href="#" data-filter="DOGECHAIN">
+                    <img src="https://coinsniper.net/assets/img/dogechain.png">
+                DOGECHAIN
+                </a>
+                </li>
+                <li class="">
+                  <a href="#" data-filter="OTHER">
+                    OTHER
+                </a>
+                </li>
+                </ul>
+      </div>
+  </div>
+      <div class="filter-dropdown">
+      <div class="dropdown-name">
+      Platform
+      </div>
+      <div class="dropdown">
+          <div class="current">
+              <div class="dropdown-title">
+      <span>ALL</span>
+              </div>
+          </div>
+          <ul class="options">
+      <li class="is-active">
+        <a href="#" data-filter="ALL">
+          ALL</a>
+      </li>
+       <li class="">
+        <a href="#" data-filter="CMC">
+          <img src="https://coinsniper.net/assets/img/cmc.png">
+       CMC</a>
+</li>
+    <li class="">
+      <a href="#" data-filter="CG">
+        <img src="https://coinsniper.net/assets/img/cg.png">
+    CG</a>
+      </li>
+      <li class="">
+        <a href="#" data-filter="CMC&CG">
+          <img src="https://coinsniper.net/assets/img/cmc-cg.png">
+      CMC &amp; CG</a>
+    </li>
+    </ul>
+      </div>
+  </div>
+  <div class="filter-dropdown">
+  <div class="dropdown-name">
+  KYC
+</div>
+<div class="dropdown">
+<div class="current">
+   <div class="dropdown-title">
+   <span>ALL</span>
+   </div>
+   </div>
+   <ul class="options">
+   <li class="is-active">
+    <a href="#" data-filter="ALL">
+      ALL</a>
+      </li>
+      <li class="">
+        <a href="#" data-filter="KYC">
+          YES</a>
+         </li>
+         <li class="">
+          <a href="#" data-filter="-  ">
+            NO</a>
+        </li>
+        </ul>
+      </div>
+  </div>
+  
+  
+              <div class="filter-dropdown">
+      <div class="dropdown-name">
+          Audit
+      </div>
+      <div class="dropdown">
+          <div class="current">
+              <div class="dropdown-title">
+         <span>ALL</span>
+         </div>
+         </div>
+          <ul class="options">
+         <li class="is-active">
+          <a href="#" data-filter="ALL">
+            ALL</a>
+           </li>
+          <li class="">
+            <a href="#" data-filter="AUDIT">
+              YES</a>
+          </li>
+          <li class="">
+            <a href="#" data-filter="NO">
+              NO</a>
+           </li>
+           </ul>
+      </div>
+  </div>
+
+  <div class="reset">
+    <form class="cs-footer_newsletter">
+      <input type="text" id="searchInput" class="cs-newsletter_input" placeholder="Search coin...">
+    </form>
+    <a href="/set-filters?kyc=all&amp;platform=all&amp;network=all#all-coins" style="color:#00aa72">&nbsp; Reset Filters</a>
+  </div>
+</div>
+</section>
+    
+    <div class="listings">
+      <div class="container containerless">
+        <div class="scrollable">
+          <div class="can-scroll has-text-right is-hidden-tablet">
+            <img src="/assets/img/table-move.svg" alt="">
+          </div>
+          <table class="table is-fullwidth" attr-table="listing">
+            <thead>
+              <tr class="table-today">
+                <th class="display-mobile sticky-col">
+                  <div>
+                    <div class="flex padding-left">
+                      <div class="index">#</div>
+                      <div class="name">Coin</div>
+                    </div>
+                    <div class="sticky-border"></div>
+                  </div>
+                </th>
+  <th class="display-mobile">
+          <div class="sortable" attr-name="votes">
+      Votes 
+  </div>
+      </th>
+<th class="display-desktop has-text-centered">#</th>
+<th class="display-desktop">Coin</th>
+<th class="display-desktop"></th>
+<th class="display-desktop">Name</th>
+<th>Badges</th>
+<th>Chain</th>
+<th>
+  <div class="sortable" attr-name="market_cap">
+      Market Cap
+  </div>
+</th>
+<th>
+  <div class="sortable" attr-name="price_usd">
+      Price
+  </div>
+</th>
+<th>
+  <div class="sortable" attr-name="price_change_24h">
+      Change 24h
+
+  </div>
+</th>
+<th>
+  <div class="sortable" attr-name="launch_date">
+      Launch
+      
+  </div>
+</th>
+      <th class="display-desktop">
+      Votes
+  </th>
+      <th class="display-desktop">
+  <div class="sortable" attr-name="votes_24h">Votes 24h
+      
+  </div>
+</th>
+      <th></th>
+      
+<th class="display-desktop"></th>
+</tr>
+     </thead>
+     <tbody id="tableBody">
+<tr data-listingid="49827">
+  
+  <!-- arama yapacak -->
+  <% let counters = 0; %>
+
+<% coins.forEach(coin => { %>
+  
+
+  
+<td class="has-wishlist ignore display-desktop has-text-centered">
+  <span>
+    <%= ++counters %> 
+
+  </span>
+</td>
+<td class="ignore display-desktop">
+  <div class="flex">
+      <img src="/coinimages/<%= coin.logo  %>" alt="" height="24">
+  </div>
+</td>
+
+
+<% if (coin.coinmarketcap) { %>
+  <td class="display-desktop cmccg">
+    <span class="platform">
+      <img class="cmc" src="https://coinsniper.net/assets/img/cmc.png" alt=""><p style="display:none;"> CMC</p> 
+    </span>
+  </td>
+<% } %>
+<td class="display-desktop cmccg">
+<% if (coin.coingecko) { %>
+  <span class="platform">
+
+      <p style="display:none;">CG</p>
+      
+      <a href="https://www.coingecko.com/en/coins/space-token-bsc" target="_blank" data-tooltip="CoinGecko" class="cg">
+      <img class="cg" src="https://coinsniper.net/assets/img/cg.png" alt="">
+      </a>
+    </span>
+  </td>
+<% } %>
+
+<td class="display-desktop">
+  <div class="listing-symbol">
+      <%= coin.name  %>
+  </div>
+  <div class="listing-name"><%= coin.symbol  %></div>
+</td>
+<td>
+      
+      <div class="kyc-verified">
+        <% if(coin.kyc) {%>
+      <div class="tag kycs">
+        <span class="kyc">
+        <img src="https://coinsniper.net/assets/img/coinsult.svg" alt="">KYC
+        </span>
+      <% }else { %>
+        <center> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp - </center>
+      
+      </div>  <% } %></div>
+      </div>
+      <br>
+      <% if(coin.audit)  {%>
+      <span class="tag audit">
+      <i class="fas fa-shield-alt"></i> AUDIT
+      </span>    
+      <% }else  {%>
+          
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -
+      
+        <% } %>   
+      </td>
+<td>
+  
+  <span class="network" data-filter="bsc">
+                      <img src="https://coinsniper.net/assets/img/<%= coin.network.toLowerCase();  %>.png">
+                  <%- coin.network  %>
+  </span>
+</td>
+
+              <td><span class="presale">
+          <img src="https://coinsniper.net/assets/img/presale.png">
+          <%= coin.presale  %>
+      </span>
+  </td>
+      <td>
+       
+    <div class="column-title">Softcap</div>
+    <% if(coin.softcap) {%>
+    <div>600K ETH</div>
+    <% }else {%>
+      <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-</div>
+
+      <% } %>
+    </td>
+  <td>
+    <div class="column-title">
+          Hardcap
+      </div>
+      <div>
+        <% if(coin.hardcap) {%>
+          1.20M ETH
+          <% }else {%>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-</div>
+
+            <% } %>
+      </div>
+      </td>
+<td>In 21 days</td>
+      <td class="display-desktop"><span class="votes">387,049</span></td>
+      <td class="display-desktop">
+  <span class="votes green">
+      <svg width="8" height="4" viewBox="0 0 8 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4.32937 0.1152C4.29267 0.079672 4.24356 0.0506224 4.18628 0.030554C4.129 0.0104855 4.06526 -1.05568e-07 4.00054 -1.11225e-07C3.93583 -1.16883e-07 3.87209 0.0104855 3.8148 0.0305539C3.75752 0.0506223 3.70842 0.079672 3.67172 0.1152L0.0714341 3.58163C0.0297609 3.62161 0.00532296 3.66844 0.000774885 3.71703C-0.00377272 3.76562 0.0117431 3.81411 0.0456381 3.85724C0.0795326 3.90036 0.130509 3.93647 0.193029 3.96164C0.25555 3.98681 0.327222 4.00008 0.40026 4L7.60082 4C7.67369 3.9998 7.7451 3.98636 7.80737 3.96113C7.86964 3.9359 7.92041 3.89984 7.95422 3.85681C7.98804 3.81379 8.00362 3.76543 7.99929 3.71694C7.99496 3.66846 7.97088 3.62168 7.92965 3.58163L4.32937 0.1152Z" fill="#00A676"></path>
+      </svg>
+      51,659
+  </span>
+</td>
+      <td class="display-desktop ignore">
+          <a href="/coins/<%= coin.coinUrl  %>" class="button is-primary">
+      Vote
+  </a>
+</td>
+<td class="ignore has-wishlist">
+          <div class="wishlist-add">
+      <img class="star" src="https://coinsniper.net/assets/img/star.png">
+  </div>
+      </td>
+</tr>
+<% }); %>
+</tbody>
+</table>
+</div>
+
+</div>
+</div>
+<!-- bitiş-->
+ 
+<!-- Start Category -->
+  <section>
+    <div class="container">
+      <div class="premium-banner-2 premium-banner-center">
+          <a href="/out/p/251" target="_blank">
+              <img src="https://storage.googleapis.com/coinsniper-assets/images/XJdPuF4dESL06zfXz2LhKBpng67Ap3M6bgVrrkIN.png" alt="" class="desktop">
+              <img src="https://storage.googleapis.com/coinsniper-assets/images/uY4W0tefFynwgY455Xl7dPPPfwMNbCrI5ZRFAOin.png" alt="" class="tablet">
+              <img src="https://storage.googleapis.com/coinsniper-assets/images/AqwQD4Ma1Shr2KnyM26duphGN6npJwtNC9Jx8L2H.png" alt="" class="mobile">
+          </a>
+          <a href="https://t.me/duncancoinsniper" class="contact">Your banner here? Contact us!</a>
+      </div>
+  </div>
+  </section>
+  <!-- End Category -->
+<section><div class="container">
+  <div class="notices">
+      <div class="column">
+          <div class="notice">
+              <h2>Your Favorite Coin Missing?</h2>
+              <p>Can't find your coin? List your favorite coin now!<br class="is-hidden-mobile"> Get your
+                  community to vote for your coin and gain exposure.</p>
+              <a href="/submit_project" class="button is-primary">Submit Coin</a>
+          </div>
+      </div>
+      <div class="column">
+          <div class="notice">
+              <h2>View New Listings</h2>
+              <p>Click the button below to view the New Listings!<br class="is-hidden-mobile"> These coins were
+                  just submitted.</p>
+              <a href="/new" class="button is-secondary">View New Listings</a>
+          </div>
+      </div>
+  </div>
+
+  <div class="seo">
+<div>
+  <h2>Find the best new cryptocurrency projects</h2>
+  <p>
+      Did ever you wonder where people find the best new cryptocurrency projects, coins and tokens like Doge
+      and Shiba Inu? They use
+      websites like <a href="/">coinsniper.net</a>. Cryptocurrency projects are listed here before
+      CoinMarketCap,
+      CoinGecko and major exchanges. Find the best crypto moonshots on our website.
+  </p>
+  <p>
+      However: before investing always do your
+      own research (DYOR)! Listing on <a href="/">coinsniper.net</a> does NOT mean we endorse the project,
+      they could be scams.
+      Be careful with your investments.
+  </p>
+</div>
+<div>
+  <h2>How does CoinSniper work?</h2>
+  <p>
+      New cryptocurrency projects can be listed <a href="/submit">Applying Here.</a> Once applied, they
+      instantly become visible
+      on the <a href="/new">New Listings Page.</a> New listings require 500 votes to be officially listed in
+      our top list.
+      After that, anyone can see and vote for the project.
+  </p>
+  <p>
+      Get your community to vote on your project, because votes matter! Our ranking is simple: the highest
+      votes is #1 on our website.
+      The project will get exposure with all our visitors!
+  </p>
+  <p>
+      <b>Note on voting:</b> Unique votes only count once for the "All Time" page, but can count every 24
+      hours on the "Today" page.
+  </p>
+</div>
+</div>
+</div></section>
+  
+
+
+
+  <div class="cs-height_60 cs-height_lg_40"></div>
+
+  <!-- Start Logo Carousel -->
+  <section>
+    <div class="container">
+      <h2 class="cs-section_heading cs-style1 text-center">Reference</h2>
+      <div class="cs-height_45 cs-height_lg_45"></div>
+    </div>
+    <div class="cs-moving_carousel_1">
+      <div class="cs-single_moving_item">
+        <div class="cs-partner">
+          <div class="cs-partner_in cs-center cs-white_bg"><img src="/home/img/partners/1.svg" alt="Partner logo"></div>
+        </div>
+      </div>
+      <div class="cs-single_moving_item">
+        <div class="cs-partner">
+          <div class="cs-partner_in cs-center cs-white_bg"><img src="/home/img/partners/2.svg" alt="Partner logo"></div>
+        </div>
+      </div>
+      <div class="cs-single_moving_item">
+        <div class="cs-partner">
+          <div class="cs-partner_in cs-center cs-white_bg"><img src="/home/img/partners/3.svg" alt="Partner logo"></div>
+        </div>
+      </div>
+      <div class="cs-single_moving_item">
+        <div class="cs-partner">
+          <div class="cs-partner_in cs-center cs-white_bg"><img src="/home/img/partners/4.svg" alt="Partner logo"></div>
+        </div>
+      </div>
+      <div class="cs-single_moving_item">
+        <div class="cs-partner">
+          <div class="cs-partner_in cs-center cs-white_bg"><img src="/home/img/partners/5.svg" alt="Partner logo"></div>
+        </div>
+      </div>
+      <div class="cs-single_moving_item">
+        <div class="cs-partner">
+          <div class="cs-partner_in cs-center cs-white_bg"><img src="/home/img/partners/6.svg" alt="Partner logo"></div>
+        </div>
+      </div>
+      <div class="cs-single_moving_item">
+        <div class="cs-partner">
+          <div class="cs-partner_in cs-center cs-white_bg"><img src="/home/img/partners/7.svg" alt="Partner logo"></div>
+        </div>
+      </div>
+    </div>
+    <div class="cs-height_30 cs-height_lg_30"></div>
+    <div class="cs-moving_carousel_2">
+      <div class="cs-single_moving_item">
+        <div class="cs-partner">
+          <div class="cs-partner_in cs-center cs-white_bg"><img src="/home/img/partners/5.svg" alt="Partner logo"></div>
+        </div>
+      </div>
+      <div class="cs-single_moving_item">
+        <div class="cs-partner">
+          <div class="cs-partner_in cs-center cs-white_bg"><img src="/home/img/partners/9.svg" alt="Partner logo"></div>
+        </div>
+      </div>
+      <div class="cs-single_moving_item">
+        <div class="cs-partner">
+          <div class="cs-partner_in cs-center cs-white_bg"><img src="/home/img/partners/10.svg" alt="Partner logo"></div>
+        </div>
+      </div>
+      <div class="cs-single_moving_item">
+        <div class="cs-partner">
+          <div class="cs-partner_in cs-center cs-white_bg"><img src="/home/img/partners/11.svg" alt="Partner logo"></div>
+        </div>
+      </div>
+      <div class="cs-single_moving_item">
+        <div class="cs-partner">
+          <div class="cs-partner_in cs-center cs-white_bg"><img src="/home/img/partners/12.svg" alt="Partner logo"></div>
+        </div>
+      </div>
+      <div class="cs-single_moving_item">
+        <div class="cs-partner">
+          <div class="cs-partner_in cs-center cs-white_bg"><img src="/home/img/partners/13.svg" alt="Partner logo"></div>
+        </div>
+      </div>
+      <div class="cs-single_moving_item">
+        <div class="cs-partner">
+          <div class="cs-partner_in cs-center cs-white_bg"><img src="/home/img/partners/14.svg" alt="Partner logo"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Logo Carousel -->
+<%- include('../partials/_footers');  %>
