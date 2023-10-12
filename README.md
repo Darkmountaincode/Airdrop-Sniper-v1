@@ -31,5 +31,5 @@ Admin can approve and publish them from the admin panel
 Promote them
 You can increase and edit the points
 
-1. ![Airdrop Sniper](https://i.ibb.co/Jvq58Mw/2233581441.png)
-2. ![Airdrop Sniper](https://i.ibb.co/sPPdxDB/3372142880.png)
+1. ![Airdrop Sniper](https://i.ibb.co/RHj70fw/2233581441.png)
+2. ![Airdrop Sniper](https://i.ibb.co/pfQWfzk/3372142880.png)
